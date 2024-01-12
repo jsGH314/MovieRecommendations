@@ -12,6 +12,7 @@ class MovieRecommendations:
         print("=====================================================")
     
     def options(self):
+        print("=====================================================")
         print("                     MAIN MENU                       ")
         print("=====================================================")
         print("What would you like to do?")
@@ -119,14 +120,14 @@ class MovieRecommendations:
     
     def sort_result(self, result):
         print("How would you like to sort these movies?")
-        print("1. By title")
-        print("2. By actor")
-        print("3. By director")
-        print("4. By genre")
-        print("5. By director and actor")
-        print("6. By director and genre")
-        print("7. By actor and genre")
-        print("8. By director, actor, and genre")
+        print("1. By title ascending")
+        print("2. By actor ascending")
+        print("3. By director ascending")
+        print("4. By genre ascending")
+        print("5. By director and actor ascending")
+        print("6. By director and genre ascending")
+        print("7. By actor and genre ascending")
+        print("8. By director, actor, and genre ascending")
         print("9. Return to main menu")
         choice = input("Enter a number: ")
         while choice != 9:
@@ -165,7 +166,7 @@ class MovieRecommendations:
             elif choice == "3":
                 self.search_by_director()
             elif choice == "4":               
-                self.display_result(self.search_by_genre())
+                self.search_by_genre()
             elif choice == "5":
                 self.search_by_director_and_actor()
             elif choice == "6":
@@ -213,8 +214,8 @@ class MovieRecommendations:
         for movie in movies:
             if genre.lower() in movie['genres_lower']:
                 result.append(movie)
-        return result
-        #self.display_result(result)
+        #return result
+        self.display_result(result)
         
     def search_by_director_and_actor(self):
         result = []
